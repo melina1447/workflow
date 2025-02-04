@@ -1,0 +1,15 @@
+name: My First Action
+
+on: push  # מריץ את ה-Workflow בכל פעם שמתבצע Push לקוד
+
+jobs:
+  my-job: # שם המשימה (job)
+
+    runs-on: ubuntu-latest  # סביבת הריצה של ה-Pipeline תהיה Ubuntu
+    
+    steps:
+      - name: Checkout code
+        run: git clone https://github.com/berezovsky13/nodejs.git  # מוריד את קוד המאגר (כמו 'git clone')
+
+      - name: Print Hello World
+        run: echo "Hello, GitHub Actions!"  # פקודת הדפסה פשוטה לטרמינל
